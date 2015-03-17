@@ -22,7 +22,7 @@ Inside your `Gruntfile.js` file, add a section named `nunit`, containing
 the test runner configuration:
 
 ```js
-nunit: {
+nunit-opencover: {
     test: {
         // Can be solutions, projects or individual assemblies. Solutions
         // are searched for projects referencing nunit.framework.dll.

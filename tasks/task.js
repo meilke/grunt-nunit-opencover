@@ -6,7 +6,7 @@ opencover = require('./opencover.js');
 
 module.exports = function(grunt) {
 
-  grunt.registerMultiTask('nunit', 'Runs NUnit console runner through OpenCover.', function() {
+  grunt.registerMultiTask('nunit-opencover', 'Runs NUnit console runner through OpenCover.', function() {
 
     var options = this.options({ nodots: true });
     var cleanup;
