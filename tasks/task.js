@@ -1,0 +1,58 @@
+var path = require('path'),
+temp = require('temp'),
+process = require('child_process'),
+nunit = require('nunit-command'),
+opencover = require('./opencover.js');
+
+module.exports = function(grunt) {
+
+  grunt.registerMultiTask('nunit', 'Runs NUnit console runner through OpenCover.', function() {
+
+    var options = this.options({ nodots: true });
+    var cleanup;
+
+    if (!options.result && options.teamcity) {
+      temp.track();
+      options.result = temp.path({ suffix: '.xml' });
+      cleanup = temp.cleanup;
+    }
+
+    console.log();
+    console.log('NUnit/OpenCover Task Runner');
+    console.log();
+
+    var assemblies = nunit.findTestAssemblies(this.filesSrc, options);
+    var command = nunit.buildCommand(assemblies, options);
+
+    if (options.cover) {
+      command = opencover.wrapCommand(command, options);
+    }
+
+    console.log('Running tests in:');
+    console.log();
+    assemblies.forEach(function(file) { console.log('    ' + file); });
+    console.log();
+
+    console.log(command.path + ' ' + command.args.join(' '));
+    console.log();
+
+    var taskComplete = this.async();
+    var nunitProcess = process.spawn(command.path, command.args, { windowsVerbatimArguments: true });
+
+    var log = function(message) { console.log(message.toString('utf8')); };
+
+    nunitProcess.stdout.on('data', log);
+    nunitProcess.stderr.on('data', log);
+
+    nunitProcess.on('exit', function(code) { 
+      if (options.teamcity) console.log(nunit.createTeamcityLog(options.result).join(''));
+      if (cleanup) cleanup();
+      if (code > 0) grunt.fail.fatal('Tests failed.');
+      taskComplete();
+    });  
+
+    nunitProcess.on('error', function(e) { 
+      grunt.fail.fatal(e.code === 'ENOENT' ? 'Unable to find executable located at ' + command.path : e.message);
+    });     
+  });
+};

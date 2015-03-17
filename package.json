@@ -1,0 +1,53 @@
+{
+  "name": "grunt-nunit-opencover",
+  "version": "0.1.0",
+  "description": "Grunt plugin for running NUnit through OpenCover",
+  "homepage": "https://github.com/meilke/grunt-nunit-opencover",
+  "main": "tasks/task.js",
+  "bugs": {
+    "url": "https://github.com/meilke/grunt-nunit-opencover/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meilke/grunt-nunit-opencover.git"
+  },
+  "keywords": [
+    "gruntplugin",
+    "grunt",
+    ".net",
+    "dotnet",
+    "opencover",
+    "nunit"
+  ],
+  "scripts": {
+    "test": "grunt"
+  },
+  "author": "Mike O'Brien, Christian Meilke",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "files": [
+    "tasks/**/*.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "underscore": "~1.5.2",
+    "temp": "~0.6.0",
+    "sax": "~0.5.8"
+  },
+  "devDependencies": {
+    "expect.js": "~0.2.0",
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "~0.7.2",
+    "grunt-mocha-test": "~0.8.1",
+    "grunt-release": "~0.6.0",
+    "mocha": "~1.15.1",
+    "nunit-command": "^0.1.2",
+    "rewire": "~2.0.0",
+    "sinon": "~1.7.3",
+    "temp": "~0.6.0"
+  },
+  "peerDependencies": {
+    "grunt": "0.4.x"
+  }
+}
