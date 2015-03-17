@@ -1,6 +1,6 @@
 {
   "name": "grunt-nunit-opencover",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Grunt plugin for running NUnit through OpenCover",
   "homepage": "https://github.com/meilke/grunt-nunit-opencover",
   "main": "tasks/task.js",
