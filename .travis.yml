@@ -7,4 +7,4 @@ install:
   - npm install
 before_script:
   - istanbul cover node_modules/mocha/bin/_mocha -- -R spec
-  - CODECLIMATE_REPO_TOKEN=d210f49e5d8d4c330135b745b0b0047eaa83237e77884a5cbcf2b01467a5a5f4 codeclimate-test-reporter < coverage/lcov.info
+  - CODECLIMATE_REPO_TOKEN=274c88b0357b953819d602c2c00c48de8d9e31d8187807ace8c4f68dca28106b codeclimate-test-reporter < coverage/lcov.info
