@@ -1,7 +1,16 @@
+[![Build Status](https://api.travis-ci.org/meilke/grunt-nunit-opencover.png)](https://travis-ci.org/meilke/grunt-nunit-opencover)
+[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+[![NPM version](https://badge.fury.io/js/grunt-nunit-opencover.svg)](http://badge.fury.io/js/grunt-nunit-opencover)  
+[![Code Climate](https://codeclimate.com/github/meilke/grunt-nunit-opencover/badges/gpa.svg)](https://codeclimate.com/github/meilke/grunt-nunit-opencover)
+[![Test Coverage](https://codeclimate.com/github/meilke/grunt-nunit-opencover/badges/coverage.svg)](https://codeclimate.com/github/meilke/grunt-nunit-opencover/coverage)
+[![Dependency Status](https://david-dm.org/meilke/grunt-nunit-opencover.svg)](https://david-dm.org/meilke/grunt-nunit-opencover)
+[![devDependency Status](https://david-dm.org/meilke/grunt-nunit-opencover/dev-status.svg)](https://david-dm.org/meilke/grunt-nunit-opencover#info=devDependencies)  
+[![forthebadge](http://forthebadge.com/images/badges/uses-badges.svg)](http://forthebadge.com)
+
+
 # grunt-nunit-opencover 
 
 Grunt plugin for running [NUnit](http://www.nunit.org/) through the eyes of [OpenCover](https://github.com/OpenCover/opencover).
-NOTE: this plugin requires Grunt 0.4.x.
 
 ## Getting Started
 From the same directory as your project's Gruntfile and package.json, install
